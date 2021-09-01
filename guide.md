@@ -34,6 +34,12 @@
 
 - 공식 문서: https://reactjs.org/
 
+### localhost URL
+- 로컬 서버에서 실행을 할 때 사용할 수 있는 키워드
+- localhost => IP 주소: 127.0.0.1
+- port - URL:port번호
+    - 하나의 물리 서버에서 여러개의 서버 SW를 실행할 수 있음
+
 ## React의 특징
 
 - Virtual DOM
@@ -41,7 +47,6 @@
 - component: 작은 단위로 나누어준 코드 블럭(단위, 조각)
 
 ### JSX(JavaScript Syntax Extension / JavaScript XML)
-
 
 - HTML 마크업 언어를 별다른 기호 사용없이 그대로 JavaScript 구문처럼 사용할 수 있는 것
 - Babel.js 라이브러리가 JSX를 사용 가능하게 해줌
@@ -57,5 +62,21 @@
 
 ### 구조 분해 할당
 
-### todo app
+### Todo Markup
 https://dev.to/hariramjp777/todo-app-using-html-css-and-js-local-storage-design-html-and-css-1m0j
+
+### Todo Component
+- header
+- main
+    - todo-list
+        -  todo-item
+    - status
+- footer
+
+### React에서 css를 작성/사용하는 방식
+- App.css에 전체 css를 구성하고 전역으로 사용하는 방식 (일반적인 사용방식)
+- module css 방식: css를 하나로 구성하지 않고 component별로 구성
+    - component와 css파일이 분리되어 있음
+- styled-component: 스타일링된 컴포넌트 => component별로 css를 구성
+    - 인라인 방식처럼 사용 => component 파일에 css, component contents 같이 작성
+    - Internal 방식으로 렌더링됨
