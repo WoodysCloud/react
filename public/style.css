@@ -218,3 +218,7 @@ mark {
 	margin: 0 auto;
 	padding: 30px 20px;
 }
+
+.footer-section>div {
+	margin: 20px 0;
+}
