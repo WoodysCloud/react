@@ -57,7 +57,5 @@
 
 ### 구조 분해 할당
 
-
-
 ### todo app
 https://dev.to/hariramjp777/todo-app-using-html-css-and-js-local-storage-design-html-and-css-1m0j
