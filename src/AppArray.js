@@ -28,15 +28,21 @@ function AppArray() {
 
   const { name, color } = carInput;
 
+  const changeText = (e) => {
+    const { property, value } = e.target;
+
+    setCarInput({
+      ...carInput,
+      [property]: value,
+    });
+  };
+
   // useRef(): 상태값 관리
   const nextId = useRef(4);
 
-  const changeData = () => {};
-
   return (
-    // 배열 내용을 표시
     <>
-      <HookArrayCreate name={name} color={color} changeEventFunc={changeData} />
+      <HookArrayCreate name={name} color={color} changeText={changeText} />
       <HookArray carArray={carArray} />
     </>
   );
