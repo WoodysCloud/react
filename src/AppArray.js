@@ -28,24 +28,27 @@ function AppArray() {
     color: '',
   });
 
+  // 구조 분해 할당
   const { carname, color } = carInput;
-
-  const changeText = (e) => {
-    const { property, value } = e.target;
-
-    setCarInput({
-      ...carInput,
-      [property]: value,
-    });
-  };
-
-  // useRef(): 상태값 관리
-  const nextId = useRef(4);
 
   return (
     <>
-      <HookArrayCreate name={name} color={color} changeText={changeText} />
-      <HookArray carArray={carArray} />
+      <div>
+        <input type="text" placeholder="차 이름을 입력해주세요." />
+        <input type="text" placeholder="차 색을 입력해주세요." />
+        <button type="button">추가</button>
+      </div>
+      <ul>
+        <li>
+          {carArray[0].carname}: {carArray[0].color}
+        </li>
+        <li>
+          {carArray[1].carname}: {carArray[1].color}
+        </li>
+        <li>
+          {carArray[2].carname}: {carArray[2].color}
+        </li>
+      </ul>
     </>
   );
 }
