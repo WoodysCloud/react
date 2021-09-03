@@ -31,24 +31,60 @@ function AppArray() {
   // 구조 분해 할당
   const { carname, color } = carInput;
 
+  // input에 텍스트 입력시 carInput에 데이터 업데이트, 화면에 텍스트 표시 리렌더링하는 함수
+  const changeText = (e) => {
+    // onChange 이벤트가 발생되었을 때 이벤트 객체에서 name, value를 받아옴
+    const { name, value } = e.target;
+
+    // carInput 객체에 새로 받아온 데이터를 set
+    setCarInput({
+      ...carInput,
+      [name]: value,
+    });
+  };
+
+  // useRef()에 매개변수값을 넣어주면 해당 값이 current property값으로 설정
+  const nextId = useRef(4);
+
+  // 버튼 클릭시 input에 입력되어 있는 텍스트를 기본 데이터 배열에 추가 / 리렌더링
+  const addText = () => {
+    // 기본 데이터 배열에 넣어줄 객체
+    const newCar = {
+      id: nextId.current,
+      carname: carname,
+      color: color,
+    };
+
+    setCarArray([...carArray, newCar]);
+
+    setCarInput({
+      carname: '',
+      color: '',
+    });
+
+    nextId.current++;
+
+    console.log(carArray);
+  };
+
+  const removeText = (id) => {
+    // filter 내장 함수: 조건에 맞는 데이터만 추출해서 새로운 데이터(배열) 생성
+    setCarArray(
+      carArray.filter(function (car) {
+        return car.id !== id;
+      }),
+    );
+  };
+
   return (
     <>
-      <div>
-        <input type="text" placeholder="차 이름을 입력해주세요." />
-        <input type="text" placeholder="차 색을 입력해주세요." />
-        <button type="button">추가</button>
-      </div>
-      <ul>
-        <li>
-          {carArray[0].carname}: {carArray[0].color}
-        </li>
-        <li>
-          {carArray[1].carname}: {carArray[1].color}
-        </li>
-        <li>
-          {carArray[2].carname}: {carArray[2].color}
-        </li>
-      </ul>
+      <HookArrayCreate
+        carname={carname}
+        color={color}
+        changeText={changeText}
+        addText={addText}
+      />
+      <HookArray carArray={carArray} removeText={removeText} />
     </>
   );
 }
