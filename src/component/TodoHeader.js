@@ -20,6 +20,11 @@ function TodoHeader({ todoContent, changeTodo, addTodo }) {
             onChange={changeTodo}
             name="todoContent"
             value={todoContent}
+            onKeyPress={(e) => {
+              if (e.key === 'Enter') {
+                addTodo();
+              }
+            }}
           />
         </div>
       </div>

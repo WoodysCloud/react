@@ -1,39 +1,67 @@
 .todo-item {
-	padding: 20px;
-	background-color: #25273c;
-	display: flex;
-	border-bottom: 1px solid #323449;
+  padding: 20px;
+  background-color: #25273c;
+  display: flex;
+  border-bottom: 1px solid #323449;
 }
 
 .check {
-	background: none;
-	border: none;
-	width: 24px;
-	height: 24px;
-	margin: 0 15px 0 0;
+  background: none;
+  border: none;
+  width: 24px;
+  height: 24px;
+  margin: 0 15px 0 0;
 }
 
 .text {
-	height: 24px;
-	line-height: 26px;
-	padding: 0;
-	color: #dddddd;
-	font-size: 16px;
-	flex: 1;
-	font-family: Cafe24SsurroundAir, sans-serif;
+  height: 24px;
+  line-height: 26px;
+  padding: 0;
+  color: #dddddd;
+  font-size: 16px;
+  flex: 1;
+  font-family: Cafe24SsurroundAir, sans-serif;
+}
+
+.text_checked {
+  height: 24px;
+  line-height: 26px;
+  padding: 0;
+  font-size: 16px;
+  flex: 1;
+  font-family: Cafe24SsurroundAir, sans-serif;
+  text-decoration: line-through;
+  color: #868e96;
 }
 
 .del {
-	width: 24px;
-	height: 24px;
-	background: none;
-	border: none;
-	padding: 0;
-	margin-left: 15px;
+  width: 24px;
+  height: 24px;
+  background: none;
+  border: none;
+  padding: 0;
+  margin-left: 15px;
 }
 
 .img {
-	width: 24px;
-	height: 24px;
-	transform: rotate(45deg);
+  width: 24px;
+  height: 24px;
+  transform: rotate(45deg);
+}
+
+.edit_input {
+  height: 22px;
+  line-height: 25px;
+  font-family: Cafe24SsurroundAir, sans-serif;
+  background: none;
+  border: none;
+  padding: 2px 0 0 0;
+  color: #eeeeee;
+  font-size: 16px;
+  flex: 1; /* flex는 block요소를 가로배치하는 명령어, "flex: (number)" => 전체 부모비율의 number만큼의 분할 */
+}
+
+.edit_input:focus {
+  outline: none;
+  border-bottom: 1px solid #999999;
 }
